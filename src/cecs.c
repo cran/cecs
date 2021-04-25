@@ -1,31 +1,38 @@
-/*
-  CEC Test Function Suite for Single Objective Optimization
-  Copyright 2020 Eryk Warchulski ewarchul@gmail.com
-*/
-
 #include "cecs.h"
 
-void cecs(char **extdatadir, char **cec, int *i, double *X, int *row, int *col,
-             double *f, char **suite) {
-    char *cecx = *cec;
-    if (!strcmp(cecx, "cec2013")) {
+CecData cd = {
+    .prevDimension = 0,
+    .prevFunction = 0,
+    .dataLoaded = 0,
+};
 
-        cec2013(extdatadir, i, X, row, col, f);
+void cecs(char **extdatadir, char **suite, char *cec, int *problem,
+          double *input, int *row, int *col, double *output) {
 
-    } else if (!strcmp(cecx, "cec2014") != 0) {
+  double *x = calloc(*col, sizeof(double));
 
-        cec2014(extdatadir, i, X, row, col, f);
-
-    } else if (!strcmp(cecx, "cec2017")) {
-
-        cec2017(extdatadir, i, X, row, col, f);
-
-    } else if (!strcmp(cecx, "cec2021")) {
-
-        cec2021(extdatadir, i, X, row, col, f, suite);
-
-    } else {
-
-        return;
+  for (int r = 0; r < *row; r++) {
+    R_CheckUserInterrupt();
+    for (int c = 0; c < *col; c++) {
+      x[c] = input[r + *row * c];
+      switch (*cec) {
+      case 14:
+        cec2014_interface(*extdatadir, x, output, *col, *row, *problem);
+        break;
+      case 15:
+        cec2015_interface(*extdatadir, x, output, *col, *row, *problem);
+        break;
+      case 17:
+        cec2017_interface(*extdatadir, x, output, *col, *row, *problem);
+        break;
+      case 19:
+        cec2019_interface(*extdatadir, x, output, *col, *row, *problem);
+        break;
+      case 21:
+        cec2021_interface(*extdatadir, x, output, *col, *row, *problem, *suite);
+        break;
+      }
     }
+  }
+  free(x);
 }

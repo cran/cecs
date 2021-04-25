@@ -2,27 +2,18 @@
 #'
 #' @description
 #' Function extracts CEC's data from ZIP archive.
-#' If data is already extracted function does nothing.
 #'
 #' @param archivepath path to CEC's data
-#' @param cec name of benchmark
 
-unzip_data <- function(archivepath, cec) {
-  path <- system.file(
-    stringr::str_interp("extdata/${cec}"),
-    package = "cecs"
+unzip_data <- function(archivepath) {
+  exdir <- stringr::str_extract(archivepath, ".*extdata")
+  cec <- stringr::str_extract(archivepath, "cec.\\d+")
+  utils::unzip(
+    archivepath,
+    exdir = exdir
   )
-  if (!stringr::str_length(path)) {
-    exdir <- system.file("extdata/", package = "cecs")
-    utils::unzip(
-      archivepath,
-      exdir = exdir
-    )
-    return(stringr::str_interp("${exdir}/${cec}"))
-  }
-  else {
-    return(path)
-  }
+  file.remove(archivepath)
+  return(stringr::str_glue("{exdir}/{cec}"))
 }
 
 #' Remove TXT data
@@ -57,23 +48,14 @@ clean <- function() {
 #' @description
 #' Function downloads numeric data forspecified CEC
 #' benchmark.
-#' For further details, see \url{http://home.elka.pw.edu.pl/~ewarchul}
+#' For further details, see \url{http://home.elka.pw.edu.pl/~ewarchul/}
 #' @param cec name of benchmark
 
 download_data <- function(cec) {
-  url <- stringr::str_interp("http://home.elka.pw.edu.pl/~ewarchul/${cec}.zip")
-  path <- system.file(
-    stringr::str_interp("extdata/${cec}.zip"),
-    package = "cecs"
+  url <- stringr::str_glue("http://home.elka.pw.edu.pl/~ewarchul/{cec}.zip")
+  destfile <- stringr::str_glue(
+    '{system.file("extdata/", package = "cecs")}{cec}.zip'
   )
-  if (!stringr::str_length(path)) {
-    destfile <- stringr::str_interp(
-      '${system.file("extdata/", package = "cecs")}/${cec}.zip'
-    )
-    utils::download.file(url, destfile = destfile)
-    return(destfile)
-  }
-  else {
-    return(path)
-  }
+  utils::download.file(url, destfile = destfile)
+  return(destfile)
 }

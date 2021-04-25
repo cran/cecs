@@ -18,6 +18,16 @@ test_that("all benchmark functions from CEC-2014 can be executed", {
   })
 })
 
+test_that("all benchmark functions from CEC-2015 can be executed", {
+  problem_dim_grid <- expand.grid(
+    func = 1:15,
+    dim = c(10, 30, 50, 100)
+  )
+  purrr::pmap(problem_dim_grid, function(func, dim) {
+    expect_type(cec2015(func, rnorm(dim)), "double")
+  })
+})
+
 test_that("all benchmark functions from CEC-2017 can be executed", {
   problem_dim_grid <- expand.grid(
     func = 1:30,
@@ -25,6 +35,27 @@ test_that("all benchmark functions from CEC-2017 can be executed", {
   )
   purrr::pmap(problem_dim_grid, function(func, dim) {
     expect_type(cec2017(func, rnorm(dim)), "double")
+  })
+})
+
+test_that("F1-F3 benchmark functions from CEC-2019 can be executed", {
+  problem_dim_grid <- list(
+    func = 1:3,
+    dim = c(9, 16, 18)
+  )
+  purrr::pmap(problem_dim_grid, function(func, dim) {
+    expect_type(cec2019(func, rnorm(dim)), "double")
+  })
+})
+
+
+test_that("F4-F10 benchmark functions from CEC-2019 can be executed", {
+  problem_dim_grid <- expand.grid(
+    func = 4:10,
+    dim = 10
+  )
+  purrr::pmap(problem_dim_grid, function(func, dim) {
+    expect_type(cec2019(func, rnorm(dim)), "double")
   })
 })
 
@@ -49,13 +80,4 @@ test_that("all benchmark functions from CEC-2021 can be executed", {
   })
 })
 
-test_that("package correctly extracts data archive and remove it", {
-  path_to_archive <- system.file("extdata/cec2013.zip", package = "cecs")
-  path_to_datadir <- stringr::str_sub(path_to_archive, end = -5)
-
-  unzip_data(path_to_archive, "cec2013")
-  expect_true(dir.exists(path_to_datadir))
-  clean()
-  expect_false(dir.exists(path_to_datadir))
-})
 
