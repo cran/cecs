@@ -24,53 +24,23 @@ Common R interface for CEC benchmarks.
 This repository contains **R** package with an interface for benchmark functions from Congress on Evolutionary Computations competitions.
 The implementation is based on the existing CRAN package, i.e `{cec2013}`, but is extended with CEC2014, CEC2015, CEC2019, and CEC2021.
 The interface for CEC2017 is taken from the non-CRAN package `{cec2017}`.
-More information about authorship is written below. 
-
-## Requirements
-
-* **R** in version 3.6.3
-
-* `{stringr}` package in version 1.4.0
-
-* `gcc` compiler in version 9.3.0
-
-Package was written and tested on machine with Ubuntu 20.04.1 LTS focal OS and x86_64 CPU architecture.
+More information about the authorship is written in `DESCRIPTION`. 
 
 ## Installation
 
-### Linux and Windows
-
-#### CRAN (temporary archived)
+### CRAN 
 
 Type bellow command in R interpreter:
 
 ```r
-#install.packages("cecs")
+install.packages("cecs")
 ```
 
-#### GitHub
+### GitHub
 
 Type bellow command in R interpreter:
 
 ```r
-library(devtools)
-devtools::install_github("ewarchul/cecs")
-```
-
-### macOS
-
-#### CRAN (temporary archived)
-
-```r
-#install.packages("cecs")
-```
-
-#### GitHub
-
-Type bellow command in R interpreter:
-
-```r
-library(devtools)
 devtools::install_github("ewarchul/cecs")
 ```
 
@@ -78,70 +48,8 @@ devtools::install_github("ewarchul/cecs")
 
 All benchmark functions were implemented in **C** by Jane Jing Liang [https://orcid.org/0000-0003-0811-0223](https://orcid.org/0000-0003-0811-0223).
 
-I rearranged the codebase, i.e. separated interface from source, for better readability but any major changes were not done.
+I rearranged the codebase, i.e. separated interface from source, changed global state management, etc.
 
 Benchmarks specifactions and necessary numeric data are available here: [http://home.elka.pw.edu.pl/~ewarchul/](http://home.elka.pw.edu.pl/~ewarchul/).
 
-
-The package downloads numeric data from given website. For futher details, see source code documentation in `man/` directory.
-
-
-### CEC 2021 
-
-#### Authorship
-
-> Authors: Eryk Warchulski
-
-> License: GPL (>=3)
-
-> Source: herein
-
-### CEC 2019 
-
-#### Authorship
-
-> Authors: Eryk Warchulski
-
-> License: GPL (>=3)
-
-> Source: herein
-
-### CEC 2017
-
-#### Authorship 
-
-> Authors: Dariusz Jagodzinski, 
-
-> License: GPL (>=3)
-
-> Source: [http://staff.elka.pw.edu.pl/~djagodzi/programy.html](http://staff.elka.pw.edu.pl/~djagodzi/programy.html)
-
-### CEC 2015
-
-#### Authorship
-
-> Authors: Eryk Warchulski 
-
-> License: GPL (>=3)
-
-> Source: herein
-
-### CEC 2014
-
-#### Authorship
-
-> Authors: Eryk Warchulski 
-
-> License: GPL (>=3)
-
-> Source: herein
-
-### CEC 2013 
-
-#### Authorship
-
-> Authors: Mauricio Zambrano-Bigiarini, Yasser Gonzalez-Fernandez
-
-> License: GPL (>=3)
-
-> Source: [https://github.com/hzambran/cec2013](https://github.com/hzambran/cec2013)
+The package downloads numeric data from my website. For futher details, see the source code documentation in `man/` directory.

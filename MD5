@@ -1,8 +1,9 @@
-14d46fbbaea118980fd06eeba51aa1c3 *DESCRIPTION
+53a14bbbaed5a02885f8256ee3cbccec *DESCRIPTION
 4426145a8fd14d425d57927ef05bff0e *NAMESPACE
+b0ee6c8401313b095108dcfb8e1ccde1 *NEWS.md
 afdf8bf572097b78570df4119b40b9c7 *R/cec.R
-3fd3167cc765c6889f148a3a857cd0c2 *R/utils.R
-932f0043d4b2c5539f2621454bb12bdc *README.md
+ed78dcee24ea9d2571bfd194bec23e67 *R/utils.R
+45ca37e9f430d29aa8bfc3467a9f3de5 *README.md
 d41d8cd98f00b204e9800998ecf8427e *inst/extdata/keep
 c6bde89fdb39e260261b9ea9757ed289 *inst/include/affine_trans.h
 b576079c039b59857c62f3359f9719a4 *inst/include/basic_funcs.h
