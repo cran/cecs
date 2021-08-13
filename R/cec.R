@@ -15,11 +15,11 @@
 
 cec2021 <- function(func_index, x, suite) {
   if (missing(func_index)) {
-    stop("Missing argument: 'func_index' has to be provided !")
+    stop("Missing argument: 'func_index' has to be provided.")
   }
 
   if (missing(x)) {
-    stop("Missing argument: 'x' has to be provided !")
+    stop("Missing argument: 'x' has to be provided.")
   }
   if (is.numeric(func_index) && func_index >= 1 && func_index <= 10) {
     if (is.vector(x)) {
@@ -34,7 +34,7 @@ cec2021 <- function(func_index, x, suite) {
     if (!(col %in% c(10, 20))) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Only 10, 20 dimensions/variables are allowed!"
+          "Invalid argument: Only 10, 20 dimensions are allowed."
         )
       )
     }
@@ -50,7 +50,8 @@ cec2021 <- function(func_index, x, suite) {
     ))) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Only 10, 20 dimensions/variables are allowed!"
+          "Invalid argument: available suits [basic, shift, rot, bias,
+          shift_rot, bias_rot, bias_shift, bias_shift_rot]."
         )
       )
     }
@@ -74,8 +75,8 @@ cec2021 <- function(func_index, x, suite) {
   } else {
     stop(
       stringr::str_glue(
-        "Invalid argument: function index should be an integer between\\
-        1 and 10!"
+        "Invalid argument: function index should be an integer between \\
+         1 and 10."
       )
     )
   }
@@ -98,11 +99,11 @@ cec2021 <- function(func_index, x, suite) {
 
 cec2019 <- function(func_index, x) {
   if (missing(func_index)) {
-    stop("Missing argument: 'func_index' has to be provided !")
+    stop("Missing argument: 'func_index' has to be provided.")
   }
 
   if (missing(x)) {
-    stop("Missing argument: 'x' has to be provided !") 
+    stop("Missing argument: 'x' has to be provided.")
   }
   if (is.numeric(func_index) && func_index >= 1 && func_index <= 10) {
     if (is.vector(x)) {
@@ -112,34 +113,34 @@ cec2019 <- function(func_index, x) {
       row <- nrow(x)
       col <- ncol(x)
     } else {
-      stop("x should be a vector or a matrix")
+      stop("x should be a vector or a matrix.")
     }
     if (func_index == 1 && col != 9) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Function 1 is available only for 9 dimensions!"
+          "Invalid argument: function F1 is available only for 9 dimensions."
         )
       )
     }
     else if (func_index == 2 && col != 16) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Function 2 is available only for 16 dimensions!"
+          "Invalid argument: function F2 is available only for 16 dimensions."
         )
       )
     }
     else if (func_index == 3 && col != 18) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Function 3 is available only for 18 dimensions!"
+          "Invalid argument: function F3 is available only for 18 dimensions."
         )
       )
-    } 
+    }
     if ((func_index %in% 4:10) && col != 10) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Functions 4-10 are available only\\
-          for 10 dimensions!"
+          "Invalid argument: Functions 4-10 are available only \\
+           for 10 dimensions."
         )
       )
     }
@@ -163,8 +164,8 @@ cec2019 <- function(func_index, x) {
   } else {
     stop(
       stringr::str_glue(
-        "Invalid argument: function index should be an integer between\\
-        1 and 10!"
+        "Invalid argument: function index should be an integer between \\
+         1 and 10."
       )
     )
   }
@@ -187,11 +188,11 @@ cec2019 <- function(func_index, x) {
 
 cec2017 <- function(func_index, x) {
   if (missing(func_index)) {
-    stop("Missing argument: 'func_index' has to be provided !")
+    stop("Missing argument: 'func_index' has to be provided.")
   }
 
   if (missing(x)) {
-    stop("Missing argument: 'x' has to be provided !")
+    stop("Missing argument: 'x' has to be provided.")
   }
   if (is.numeric(func_index) && func_index >= 1 && func_index <= 30) {
     if (is.vector(x)) {
@@ -201,13 +202,13 @@ cec2017 <- function(func_index, x) {
       row <- nrow(x)
       col <- ncol(x)
     } else {
-      stop("x should be a vector or a matrix")
+      stop("x should be a vector or a matrix.")
     }
     if (!(col %in% c(10, 30, 50, 100))) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Only 10, 30, 50, 100\\
-          dimensions/variables are allowed !"
+          "Invalid argument: Only 10, 30, 50, 100 \\
+           dimensions are allowed."
         )
       )
     }
@@ -231,8 +232,8 @@ cec2017 <- function(func_index, x) {
   } else {
     stop(
       stringr::str_glue(
-        "Invalid argument: function index should be an integer between\\
-        1 and 30!"
+        "Invalid argument: function index should be an integer between \\
+         1 and 30."
       )
     )
   }
@@ -253,11 +254,11 @@ cec2017 <- function(func_index, x) {
 
 cec2015 <- function(func_index, x) {
   if (missing(func_index)) {
-    stop("Missing argument; 'func_index' has to be provided!")
+    stop("Missing argument: 'func_index' has to be provided.")
   }
 
   if (missing(x)) {
-    stop("Missing argument; 'x' has to be provided!")
+    stop("Missing argument: 'x' has to be provided.")
   }
   if (is.numeric(func_index) && func_index >= 1 && func_index <= 15) {
     if (is.vector(x)) {
@@ -267,13 +268,13 @@ cec2015 <- function(func_index, x) {
       row <- nrow(x)
       col <- ncol(x)
     } else {
-      stop("x should be a vector or a matrix")
+      stop("x should be a vector or a matrix.")
     }
     if (!(col %in% c(10, 30, 50, 100))) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Only 10, 30, 50, 100\\
-          dimensions/variables are allowed!"
+          "Invalid argument: Only 10, 30, 50, 100 \\
+           dimensions are allowed."
         )
       )
     }
@@ -297,8 +298,8 @@ cec2015 <- function(func_index, x) {
   } else {
     stop(
       stringr::str_glue(
-        "Invalid argument: function index should be an integer between\\
-        1 and 15!"
+        "Invalid argument: function index should be an integer between \\
+         1 and 15."
       )
     )
   }
@@ -320,11 +321,11 @@ cec2015 <- function(func_index, x) {
 
 cec2014 <- function(func_index, x) {
   if (missing(func_index)) {
-    stop("Missing argument: 'func_index' has to be provided !")
+    stop("Missing argument: 'func_index' has to be provided.")
   }
 
   if (missing(x)) {
-    stop("Missing argument: 'x' has to be provided !")
+    stop("Missing argument: 'x' has to be provided.")
   }
   if (is.numeric(func_index) && func_index >= 1 && func_index <= 30) {
     if (is.vector(x)) {
@@ -334,13 +335,13 @@ cec2014 <- function(func_index, x) {
       row <- nrow(x)
       col <- ncol(x)
     } else {
-      stop("x should be a vector or a matrix")
+      stop("x should be a vector or a matrix.")
     }
     if (!(col %in% c(10, 20, 30, 50, 100))) {
       stop(
         stringr::str_glue(
-          "Invalid argument: Only 10, 20, 30, 50, 100\\
-          dimensions/variables are allowed !"
+          "Invalid argument: Only 10, 20, 30, 50, 100 \\
+          dimensions are allowed."
         )
       )
     }
@@ -364,8 +365,8 @@ cec2014 <- function(func_index, x) {
   } else {
     stop(
       stringr::str_glue(
-        "Invalid argument: function index should be an integer between\\
-        1 and 30!"
+        "Invalid argument: function index should be an integer between \\
+         1 and 30."
       )
     )
   }

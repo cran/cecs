@@ -1,9 +1,9 @@
-53a14bbbaed5a02885f8256ee3cbccec *DESCRIPTION
+048d9f954d2ea614f77a9e543e26bad6 *DESCRIPTION
 4426145a8fd14d425d57927ef05bff0e *NAMESPACE
 b0ee6c8401313b095108dcfb8e1ccde1 *NEWS.md
-afdf8bf572097b78570df4119b40b9c7 *R/cec.R
-ed78dcee24ea9d2571bfd194bec23e67 *R/utils.R
-45ca37e9f430d29aa8bfc3467a9f3de5 *README.md
+5019255e471001000ab69b5d1a27f2a4 *R/cec.R
+13306e2e83b8ec8aeb0fddb399aad9ed *R/utils.R
+fb8fc287fb0149e4a02247dd8aaaf3ae *README.md
 d41d8cd98f00b204e9800998ecf8427e *inst/extdata/keep
 c6bde89fdb39e260261b9ea9757ed289 *inst/include/affine_trans.h
 b576079c039b59857c62f3359f9719a4 *inst/include/basic_funcs.h
@@ -19,7 +19,7 @@ fb22ed92102bf4bf9afbd603b1a781f9 *man/cec2015.Rd
 f3b5d2fce29b538924a95d04b23d20e6 *man/cec2019.Rd
 bca46b26b20cf0c68f3b625312c1e309 *man/cec2021.Rd
 0cca45c2bd9379cd0767c8ab8af4b304 *man/clean.Rd
-33b18d3809bba9bf613d59c35dc30a59 *man/download_data.Rd
+67558c621815acb8bcdb2398285de58b *man/download_data.Rd
 f0b88e8d61a44a2420a4fb712cbbc873 *man/unzip_data.Rd
 0e531c29e19920fb17712302c1072c80 *src/Makevars
 5c51a9f1c5a311919f4e57d02eb561f1 *src/affine_trans.c
