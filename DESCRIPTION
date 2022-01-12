@@ -1,6 +1,6 @@
 Package: cecs
 Title: R Interface for the C Implementation of CEC Benchmark Functions
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: c( 
     person("Eryk", "Warchulski", role = c("aut", "cre"), email = "ewarchul@gmail.com"),
     person("Dariusz", "Jagodziński", role = c("cph"), email = "d.jagodzinski@elka.pw.edu.pl"),
@@ -23,11 +23,11 @@ RoxygenNote: 7.1.2
 Suggests: testthat (>= 3.0.0), purrr (>= 0.3.4)
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2021-12-20 21:55:11 UTC; ewarchul
+Packaged: 2022-01-12 22:56:36 UTC; ewarchul
 Author: Eryk Warchulski [aut, cre],
   Dariusz Jagodziński [cph],
   Yasser Gonzalez-Fernandez [cph],
   Mauricio Zambrano-Bigiarini [cph]
 Maintainer: Eryk Warchulski <ewarchul@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-12-21 11:30:02 UTC
+Date/Publication: 2022-01-12 23:12:40 UTC
